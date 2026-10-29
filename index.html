@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bella Napoli – Pizzeria napolitaine (site de démonstration)</title>
+<meta name="description" content="Maquette de site vitrine pour BELLA NAPOLI, pizzeria fictive : pâte longuement levée, produits italiens, four à bois. Site de démonstration.">
+<!-- Maquette fictive : retirer la ligne ci-dessous pour un vrai site client afin de l'indexer. -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#1F3D2E">
+<meta property="og:title" content="Bella Napoli – site de démonstration">
+<meta property="og:description" content="Maquette de site vitrine pour une pizzeria italienne fictive.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%23A8402B'/%3E%3Ccircle cx='50' cy='50' r='30' fill='%23F3C96B'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --creme:#FBF4E6; --creme-2:#F2E7D0; --brique:#A8402B; --brique-fonce:#8A3220;
+  --vert:#1F3D2E; --noir:#2A211B; --gris:#6B5E52;
+  --serif:"Fraunces",Georgia,"Times New Roman",serif;
+  --sans:"Figtree",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --max:1120px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;background:var(--creme);color:var(--noir);font:400 1.0625rem/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);line-height:1.1;margin:0 0 .5em;font-weight:700;letter-spacing:-.01em}
+h1{font-size:clamp(2.6rem,7vw,5rem)}
+h2{font-size:clamp(2rem,4.5vw,3.1rem)}
+h3{font-size:1.45rem}
+p{margin:0 0 1em;max-width:62ch}
+.wrap{width:min(100% - 2.5rem,var(--max));margin-inline:auto}
+section{padding:clamp(3.5rem,8vw,6.5rem) 0}
+:focus-visible{outline:3px solid var(--brique);outline-offset:3px;border-radius:4px}
+.skip{position:absolute;left:1rem;top:-4rem;background:var(--noir);color:#fff;padding:.6rem 1rem;border-radius:6px;z-index:100}
+.skip:focus{top:1rem}
+
+/* Bandeau démo */
+.demo-bar{background:var(--noir);color:var(--creme);font-size:.85rem;text-align:center;padding:.45rem 1rem}
+
+/* Navigation */
+header.nav{position:sticky;top:0;z-index:50;background:rgba(251,244,230,.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(42,33,27,.12)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:var(--serif);font-weight:700;font-size:1.45rem;letter-spacing:.04em;text-decoration:none;color:var(--brique)}
+.logo span{color:var(--vert)}
+.menu{display:flex;gap:1.8rem;list-style:none;margin:0;padding:0;align-items:center}
+.menu a{text-decoration:none;font-weight:500;padding:.4rem 0;border-bottom:2px solid transparent}
+.menu a:hover{border-color:var(--brique)}
+.burger{display:none;background:none;border:0;padding:.6rem;cursor:pointer;color:var(--noir)}
+.burger span{display:block;width:26px;height:2px;background:currentColor;margin:6px 0;transition:transform .25s,opacity .25s}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+
+/* Boutons */
+.btn{display:inline-block;text-decoration:none;font-weight:600;padding:.95rem 1.7rem;border-radius:999px;border:2px solid var(--brique);background:var(--brique);color:#fff;transition:background .2s,color .2s}
+.btn:hover{background:var(--brique-fonce);border-color:var(--brique-fonce)}
+.btn.ghost{background:transparent;color:var(--brique)}
+.btn.ghost:hover{background:var(--brique);color:#fff}
+.btn.light{background:var(--creme);border-color:var(--creme);color:var(--vert)}
+.btn.light:hover{background:#fff}
+.btn.ghost-light{background:transparent;border-color:var(--creme);color:var(--creme)}
+.btn.ghost-light:hover{background:var(--creme);color:var(--vert)}
+
+/* Accueil */
+.hero{padding:0;background:var(--vert);color:var(--creme)}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:0;width:100%;max-width:none}
+.hero-text{padding:clamp(3rem,7vw,6rem) clamp(1.25rem,5vw,4.5rem);display:flex;flex-direction:column;justify-content:center}
+.hero-text .lead{font-size:1.2rem;color:#E6DCC6}
+.hero-text .actions{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:1.2rem}
+.hero h1 em{font-style:italic;font-weight:500;color:#F3C96B}
+.hero-img{min-height:520px;background:var(--brique) center/cover}
+.hero-img img{width:100%;height:100%;object-fit:cover}
+
+/* Présentation */
+.about .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,5rem);align-items:center}
+.about .photo{aspect-ratio:4/5;border-radius:200px 200px 16px 16px;overflow:hidden;background:var(--creme-2)}
+.about .photo img{width:100%;height:100%;object-fit:cover}
+.pull{font-family:var(--serif);font-style:italic;font-size:1.35rem;color:var(--brique);border-left:3px solid var(--brique);padding-left:1rem;margin:1.5rem 0 0}
+
+/* Carte */
+.carte{background:var(--creme-2)}
+.carte .intro{display:flex;justify-content:space-between;align-items:end;flex-wrap:wrap;gap:1rem;margin-bottom:2.5rem}
+.note{font-size:.95rem;color:var(--gris);background:#fff8;border:1px dashed var(--brique);border-radius:10px;padding:.7rem 1rem;max-width:34ch;margin:0}
+.pizzas{display:grid;grid-template-columns:repeat(2,1fr);gap:2.2rem 2rem}
+.pizza{display:grid;grid-template-columns:150px 1fr;gap:1.2rem;align-items:center}
+.pizza .pic{width:150px;height:150px;border-radius:50%;overflow:hidden;background:var(--creme);box-shadow:0 0 0 6px var(--creme)}
+.pizza .pic img{width:100%;height:100%;object-fit:cover}
+.pizza .head{display:flex;justify-content:space-between;align-items:baseline;gap:.8rem;border-bottom:1px dotted var(--gris);margin-bottom:.4rem}
+.pizza h3{margin:0 0 .15rem}
+.prix{font-family:var(--serif);font-weight:700;font-size:1.3rem;color:var(--brique);white-space:nowrap}
+.pizza p{margin:0;font-size:.98rem;color:var(--gris)}
+
+/* Savoir-faire */
+.savoir .wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(2rem,6vw,5rem);align-items:center}
+.savoir .photo{aspect-ratio:1/1;border-radius:16px;overflow:hidden;background:var(--creme-2)}
+.savoir .photo img{width:100%;height:100%;object-fit:cover}
+.etapes{list-style:none;margin:1.5rem 0 0;padding:0;counter-reset:e}
+.etapes li{counter-increment:e;padding:0 0 1.2rem 3.2rem;position:relative}
+.etapes li::before{content:counter(e);position:absolute;left:0;top:0;width:2.2rem;height:2.2rem;border-radius:50%;background:var(--vert);color:var(--creme);font-family:var(--serif);font-weight:700;display:grid;place-items:center}
+.etapes strong{display:block;font-family:var(--serif);font-size:1.2rem}
+.ingr{display:flex;flex-wrap:wrap;gap:.6rem;list-style:none;padding:0;margin:1.2rem 0 0}
+.ingr li{border:1.5px solid var(--vert);color:var(--vert);border-radius:999px;padding:.3rem .95rem;font-weight:500;font-size:.95rem}
+
+/* Infos */
+.infos{background:var(--vert);color:var(--creme)}
+.infos h2{color:var(--creme)}
+.infos .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3rem;margin-top:2rem}
+.infos h3{color:#F3C96B}
+.horaires{width:100%;border-collapse:collapse;max-width:380px}
+.horaires th,.horaires td{text-align:left;padding:.5rem 0;border-bottom:1px solid rgba(251,244,230,.2);font-weight:400}
+.horaires td{text-align:right}
+.infos address{font-style:normal}
+.infos .actions{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:1.4rem}
+.small{font-size:.88rem;color:#CFC5AE;margin-top:1.2rem}
+
+/* Pied de page */
+footer{background:var(--noir);color:#D9CFBC;padding:3rem 0 2rem}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:2rem}
+footer .logo{color:var(--creme)}
+footer .logo span{color:#F3C96B}
+footer ul{list-style:none;padding:0;margin:0;display:flex;gap:1.4rem;flex-wrap:wrap}
+footer a{text-decoration:none}
+footer a:hover{text-decoration:underline}
+footer .legal{width:100%;border-top:1px solid rgba(255,255,255,.15);padding-top:1.2rem;font-size:.88rem}
+
+/* Une seule animation d'entrée : le titre d'accueil */
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.hero-text{animation:rise .8s ease-out both}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero-text{animation:none}*{transition:none!important}}
+
+/* Tablette */
+@media (max-width:900px){
+  .hero .wrap{grid-template-columns:1fr}
+  .hero-img{min-height:340px;order:-1}
+  .about .wrap,.savoir .wrap{grid-template-columns:1fr}
+  .about .photo{max-width:420px;aspect-ratio:1/1;border-radius:200px 200px 16px 16px}
+  .savoir .photo{max-width:520px}
+  .pizzas{grid-template-columns:1fr}
+  .infos .grid{grid-template-columns:1fr;gap:2rem}
+}
+/* Mobile : menu */
+@media (max-width:760px){
+  .burger{display:block}
+  .menu{position:absolute;left:0;right:0;top:68px;background:var(--creme);flex-direction:column;align-items:stretch;gap:0;padding:.5rem 1.25rem 1.2rem;border-bottom:1px solid rgba(42,33,27,.15);display:none}
+  .menu.open{display:flex}
+  .menu a{display:block;padding:.9rem 0;border-bottom:1px solid rgba(42,33,27,.1);font-size:1.1rem}
+  .pizza{grid-template-columns:110px 1fr;gap:1rem}
+  .pizza .pic{width:110px;height:110px}
+  .btn{width:100%;text-align:center}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<div class="demo-bar">Site de démonstration : BELLA NAPOLI est une pizzeria fictive. Prix, horaires et coordonnées sont des exemples.</div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#accueil" aria-label="BELLA NAPOLI, retour à l'accueil">BELLA <span>NAPOLI</span></a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
+    <nav aria-label="Navigation principale">
+      <ul class="menu" id="menu">
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#maison">La maison</a></li>
+        <li><a href="#carte">La carte</a></li>
+        <li><a href="#savoir-faire">Savoir-faire</a></li>
+        <li><a href="#infos">Infos pratiques</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="contenu">
+<section class="hero" id="accueil" aria-labelledby="t-hero">
+  <div class="wrap">
+    <div class="hero-text">
+      <h1 id="t-hero">La pizza comme à <em>Naples</em>, sortie du four à bois.</h1>
+      <p class="lead">Une pâte levée 48 heures, des tomates mûries au soleil et une mozzarella fraîche. Simple, généreux, fait maison.</p>
+      <div class="actions">
+        <a class="btn light" href="#carte">Découvrir la carte</a>
+        <a class="btn ghost-light" href="#infos">Nous trouver</a>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img data-fallback="hero" src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=70" alt="Pizza napolitaine garnie de tomate, mozzarella et basilic, juste sortie du four" width="1200" height="800" fetchpriority="high">
+    </div>
+  </div>
+</section>
+
+<section class="about" id="maison" aria-labelledby="t-maison">
+  <div class="wrap">
+    <div class="photo">
+      <img data-fallback="about" loading="lazy" src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=800&q=70" alt="Pizza margherita posée sur une table en bois" width="800" height="1000">
+    </div>
+    <div>
+      <h2 id="t-maison">Une table où l'on se sent chez soi.</h2>
+      <p>BELLA NAPOLI, c'est une cuisine ouverte, l'odeur du bois qui chauffe et des pizzas partagées au milieu de la table. Ici, on prend le temps : la pâte repose, les produits sont choisis un par un, et chaque pizza passe moins de deux minutes dans le four.</p>
+      <p>Que vous veniez en famille, entre amis ou pour une pause du midi, l'accueil reste le même : chaleureux et sans chichi.</p>
+      <p class="pull">Peu d'ingrédients, tous soignés.</p>
+    </div>
+  </div>
+</section>
+
+<section class="carte" id="carte" aria-labelledby="t-carte">
+  <div class="wrap">
+    <div class="intro">
+      <h2 id="t-carte">Quatre pizzas à la carte</h2>
+      <p class="note"><strong>Exemple :</strong> les prix ci-dessous sont fictifs et servent uniquement à la maquette.</p>
+    </div>
+    <div class="pizzas">
+      <article class="pizza">
+        <div class="pic"><img data-fallback="pizza" loading="lazy" src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=400&q=70" alt="Pizza Margherita" width="400" height="400"></div>
+        <div>
+          <div class="head"><h3>Margherita</h3><span class="prix">10 €</span></div>
+          <p>Tomate San Marzano, mozzarella fior di latte, basilic frais, huile d'olive.</p>
+        </div>
+      </article>
+      <article class="pizza">
+        <div class="pic"><img data-fallback="pizza" loading="lazy" src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=400&q=70" alt="Pizza garnie de légumes et de fromage" width="400" height="400"></div>
+        <div>
+          <div class="head"><h3>Diavola</h3><span class="prix">13 €</span></div>
+          <p>Tomate, mozzarella, salami piquant, piment doux, origan.</p>
+        </div>
+      </article>
+      <article class="pizza">
+        <div class="pic"><img data-fallback="pizza" loading="lazy" src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?auto=format&fit=crop&w=400&q=70" alt="Pizza aux champignons, jambon et fromage" width="400" height="400"></div>
+        <div>
+          <div class="head"><h3>Prosciutto e Funghi</h3><span class="prix">14 €</span></div>
+          <p>Tomate, mozzarella, jambon cuit, champignons rôtis, persil.</p>
+        </div>
+      </article>
+      <article class="pizza">
+        <div class="pic"><img data-fallback="pizza" loading="lazy" src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=400&q=70" alt="Pizza aux légumes grillés et au basilic" width="400" height="400"></div>
+        <div>
+          <div class="head"><h3>Giardino</h3><span class="prix">13 €</span></div>
+          <p>Mozzarella, courgettes et poivrons grillés, tomates cerises, roquette.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="savoir" id="savoir-faire" aria-labelledby="t-savoir">
+  <div class="wrap">
+    <div class="photo">
+      <img data-fallback="about" loading="lazy" src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=70" alt="Pizza fraîchement préparée avec des ingrédients frais" width="800" height="800">
+    </div>
+    <div>
+      <h2 id="t-savoir">Une pâte patiente, des produits choisis</h2>
+      <ol class="etapes">
+        <li><strong>La pâte repose 48 heures</strong>Farine de blé, eau, sel et très peu de levure : elle devient légère et facile à digérer.</li>
+        <li><strong>Façonnée à la main</strong>Pas de rouleau. On l'étire doucement pour garder un bord aéré.</li>
+        <li><strong>Cuite en 90 secondes</strong>Four à bois à plus de 450 °C, pour un bord gonflé et un cœur moelleux.</li>
+      </ol>
+      <ul class="ingr" aria-label="Ingrédients principaux">
+        <li>Tomates San Marzano</li><li>Mozzarella fior di latte</li><li>Basilic frais</li><li>Huile d'olive vierge extra</li><li>Farine de blé tendre</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="infos" id="infos" aria-labelledby="t-infos">
+  <div class="wrap">
+    <h2 id="t-infos">Venez nous voir</h2>
+    <div class="grid">
+      <div>
+        <h3>Horaires (exemple)</h3>
+        <table class="horaires">
+          <caption class="sr" style="position:absolute;left:-9999px">Horaires d'ouverture de démonstration</caption>
+          <tbody>
+            <tr><th scope="row">Mardi au vendredi</th><td>12h – 14h30, 19h – 22h30</td></tr>
+            <tr><th scope="row">Samedi</th><td>12h – 23h</td></tr>
+            <tr><th scope="row">Dimanche</th><td>12h – 22h</td></tr>
+            <tr><th scope="row">Lundi</th><td>Fermé</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <h3>Coordonnées (exemple)</h3>
+        <address>
+          12 rue de l'Exemple<br>
+          1000 Ville-Exemple<br>
+          Tél. : 01 23 45 67 89<br>
+          contact@example.com
+        </address>
+        <div class="actions">
+          <a class="btn light" href="mailto:contact@example.com?subject=Demande%20de%20contact%20(d%C3%A9mo)">Nous contacter</a>
+          <a class="btn ghost-light" href="https://www.openstreetmap.org/" target="_blank" rel="noopener noreferrer">Voir l'itinéraire<span class="sr" style="position:absolute;left:-9999px"> (lien de démonstration, s'ouvre dans un nouvel onglet)</span></a>
+        </div>
+        <p class="small">Liens de démonstration : le bouton de contact ouvre un e-mail vers une adresse fictive, l'itinéraire pointe vers une carte générique.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="logo" href="#accueil">BELLA <span>NAPOLI</span></a>
+      <p style="margin:.6rem 0 0">Pizzeria napolitaine (fictive).</p>
+    </div>
+    <nav aria-label="Navigation du pied de page">
+      <ul>
+        <li><a href="#maison">La maison</a></li>
+        <li><a href="#carte">La carte</a></li>
+        <li><a href="#savoir-faire">Savoir-faire</a></li>
+        <li><a href="#infos">Infos pratiques</a></li>
+      </ul>
+    </nav>
+    <p class="legal">© 2026 BELLA NAPOLI : maquette de démonstration, établissement fictif. Photos : Unsplash (licence Unsplash).</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  /* Menu mobile */
+  var burger=document.getElementById('burger'), menu=document.getElementById('menu');
+  function setMenu(open){
+    menu.classList.toggle('open',open);
+    burger.setAttribute('aria-expanded',open);
+    burger.setAttribute('aria-label',open?'Fermer le menu':'Ouvrir le menu');
+  }
+  burger.addEventListener('click',function(){setMenu(!menu.classList.contains('open'))});
+  menu.addEventListener('click',function(e){if(e.target.tagName==='A')setMenu(false)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&menu.classList.contains('open')){setMenu(false);burger.focus()}});
+  window.addEventListener('resize',function(){if(window.innerWidth>760)setMenu(false)});
+
+  /* Image de remplacement (illustration SVG) si une photo ne charge pas */
+  var svg='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" fill="#F2E7D0"/><circle cx="100" cy="100" r="88" fill="#D9A25B"/><circle cx="100" cy="100" r="74" fill="#A8402B"/><circle cx="100" cy="100" r="68" fill="#F3E3B3"/><g fill="#A8402B"><circle cx="75" cy="85" r="9"/><circle cx="125" cy="80" r="9"/><circle cx="100" cy="125" r="9"/><circle cx="130" cy="120" r="7"/><circle cx="70" cy="120" r="7"/></g><g fill="#1F3D2E"><ellipse cx="100" cy="95" rx="9" ry="5" transform="rotate(-30 100 95)"/><ellipse cx="85" cy="108" rx="8" ry="4" transform="rotate(20 85 108)"/><ellipse cx="116" cy="106" rx="8" ry="4" transform="rotate(-10 116 106)"/></g></svg>';
+  var uri='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg);
+  document.querySelectorAll('img[data-fallback]').forEach(function(img){
+    img.addEventListener('error',function(){if(img.src!==uri){img.src=uri;img.style.objectFit='cover'}},{once:true});
+  });
+})();
+</script>
+</body>
+</html>
